@@ -1,0 +1,177 @@
+/* fuentes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* fuentes descargadas */
+@font-face {
+    font-family: 'AmazDooMleft';
+    src: url(../fonts/amazdoom/AmazDooMLeft.ttf);
+}
+
+@font-face {
+    font-family: 'AmazDooMright';
+    src: url(../fonts/amazdoom/AmazDooMRight.ttf);
+}
+
+/* reseteo basico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* tipografia general (importada) */
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* ajustes letras logo */
+.mayus {
+    text-transform: uppercase;
+}
+
+.minus {
+    text-transform: lowercase;
+}
+
+.right {
+    font-family: 'AmazDooMright';
+}
+
+.left {
+    font-family: 'AmazDooMleft';
+}
+
+/* nav superior */
+nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    height: 90px;
+}
+
+/* logo */
+.containerLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo,
+#logoFooter {
+    font-family: 'AmazDooMleft';
+    font-size: 5rem;
+    color: black;
+    text-decoration: none;
+    transform: translateY(10%);
+}
+
+/* container menu */
+.containerMenu ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.containerMenu ul li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.containerMenu ul li a {
+    text-decoration: none;
+}
+
+/* divider */
+.divider {
+    height: 20vh;
+    padding-top: 5vh;
+}
+
+.dividerLine {
+    height: 1px;
+    max-width: 700px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+/* container presentacion */
+.presentation {
+    padding-top: 120px;
+    padding-bottom: 45px;
+    width: 100%;
+}
+
+.containerPresentation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.presentacionImg {
+    border-radius: 50%;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+    background-image: url('../img/beruPerfil.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.presentationInfo {
+    align-self: center;
+}
+
+/* footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 90px 100px 0;
+}
+
+.containerFooter {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.footerLinks ul li {
+    list-style: none;
+}
+
+.footerLinks ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* logo footer */
+.logoFooter {
+    display: flex;
+    align-items: flex-end;
+}
+
+#logoFooter {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 10rem;
+}
+
+.logoFooter a {
+    color: aqua;
+}
