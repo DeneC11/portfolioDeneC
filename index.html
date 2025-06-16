@@ -17,12 +17,12 @@
         <div class="containerMenu">
             <ul>
                 <li><a href="#">Sobre mi</a></li>
-                <li><a href="#">Traabajos</a></li>
+                <li><a href="#">Trabajos</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         </div>
     </nav>
-    <div class="presentation">
+    <div class="presentation baseContainer">
         <div class="containerPresentation">
             <div class="presentacionImg"></div>
             <div class="presentationInfo">
@@ -36,23 +36,18 @@
         <div class="dividerLine"></div>
     </div>
     <div class="mainProjects">
-        <div class="mainWebProjects">
-            <p>proyectos web</p>
+        <div class="mainWebProjects gridProjects" id="scrollImg">
+            <img src="./img/david-navarro-tascaptura1.jpg" alt="webProject1">
+            <img src="./img/david-navarro-tascaptura1.jpg" alt="webProject2">
+            <img src="./img/david-navarro-tascaptura1.jpg" alt="webProject3">
         </div>
-        <div class="mainVideogameProjects">
-            <p>proyectos videojuegos</p>
-        </div>
-        <div class="enlaceProyectos">
-            <div class="containerEnlaceProyectos">
-                <button id="webBtn" class="btn">web</button>
-                <button id="videogameBtn" class="btn">3d</button>
-            </div>
+        <div class="mainVideogameProjects gridProjects" id="scrollImg2">
+            <img src="./img/david-navarro-tascaptura1.jpg" alt="artProject1">
+            <img src="./img/david-navarro-tascaptura1.jpg" alt="artProject2">
+            <img src="./img/david-navarro-tascaptura1.jpg" alt="artProject3">
         </div>
     </div>
-    <div class="divider">
-        <div class="dividerLine"></div>
-    </div>
-    <div class="mySkills">
+    <div class="mySkills baseContainer">
         <div class="containerSkills">
             <p>se hacer cosos</p>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, ad quos deleniti optio provident,
@@ -71,14 +66,30 @@
                 tenetur, amet reiciendis dicta, accusamus commodi vitae aut quidem quos impedit non corrupti saepe.
                 Perferendis autem numquam dicta unde consequatur nihil architecto accusantium nemo est cum delectus,
                 iste alias qui natus odio eaque quidem optio.</p>
+            <div class="enlaceProyectos">
+                <div class="containerEnlaceProyectos">
+                    <button id="webBtn" class="btn">web</button>
+                    <button id="videogameBtn" class="btn">3d</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="divider">
         <div class="dividerLine"></div>
     </div>
-    <div class="software">
-        <div class="containerSoftware">
-            <h2>Software</h2>
+    <div class="baseContainer software">
+        <div class=" slide containerSoftware active">
+            <h2>Web Software</h2>
+            <div class="gridSoftware">
+                <div class="program">
+                    <img src="" alt="programa1">
+                    <p class="nombreProgram">nombre programa1</p>
+                    <p class="usesProgram">uso programa1</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide containerSoftware hide">
+            <h2>Art Software</h2>
             <div class="gridSoftware">
                 <div class="program">
                     <img src="" alt="programa1">
@@ -91,7 +102,7 @@
     <div class="divider">
         <div class="dividerLine"></div>
     </div>
-    <footer>
+    <footer class="baseContainer">
         <div class="containerFooter">
             <div class="footerLinks">
                 <div class="linksMenu">
@@ -119,6 +130,32 @@
         </div>
         <div class="endFooter">DeneC © 2025</div>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const desplazamiento = (window.scrollY) * 0.07;
+            const desplazamiento2 = (window.scrollY * -1) * 0.07;
+            const imagen = document.getElementById('scrollImg');
+            const imagen2 = document.getElementById('scrollImg2');
+            imagen.style.transform = `translateX(${desplazamiento}px)`;
+            imagen2.style.transform = `translateX(${desplazamiento2}px)`;
+        });
+        const slides = document.querySelectorAll(".slide");
+        console.log(slides);
+        slides.forEach((slide)=>{
+            slide.addEventListener("click",()=>{
+                removeCurrentActive();
+                slide.classList.add("active");
+                slide.classList.remove("hide");
+            })
+        })      
+        function removeCurrentActive(){
+            slides.forEach((slide)=>{
+                slide.classList.remove("active");
+                slide.classList.add("hide");
+            })
+        }  
+    </script>
 </body>
 
 </html>
