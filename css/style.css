@@ -12,6 +12,16 @@
     src: url(../fonts/amazdoom/AmazDooMRight.ttf);
 }
 
+/* root colors */
+:root{
+    /* light colors */
+    --backgroudLigt: white;
+
+    /* night colors */
+    --backgroudNight: black;
+    
+}
+
 /* reseteo basico */
 * {
     margin: 0;
@@ -57,8 +67,8 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10vw;
+    padding-right: 10vw;
     background-color: rgba(255, 255, 255, 0.9);
     height: 90px;
     z-index: 10;
@@ -70,14 +80,22 @@ nav {
     justify-content: center;
     align-items: center;
 }
+#logo{
+    &:hover{
+        transform: translateY(20px) scale(110%);
+    }
+    &:focus{
+        outline: none;
+    }
+}
 
 #logo,
 #logoFooter {
     font-family: 'AmazDooMleft';
-    font-size: 5rem;
+    font-size: 6rem;
     color: black;
     text-decoration: none;
-    transform: translateY(10%);
+    transform: translateY(15%);
 }
 
 /* container menu */
@@ -94,6 +112,13 @@ nav {
 
 .containerMenu ul li a {
     text-decoration: none;
+    color: rgb(78, 78, 78);
+    font-weight: bold;
+    font-size: 1.2rem;
+    &:hover{
+        color: grey;
+        text-decoration: underline;
+    }
 }
 
 /* divider */
@@ -138,9 +163,13 @@ nav {
 }
 
 /* main projects */
+.mainProjects{
+    transform: translate3d(0px, 0px, 0px) scale3d(1.1, 1.1, 1.1) rotateX(15deg) rotateY(0deg) rotateZ(-2deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
 .gridProjects {
     display: grid;
-    grid-column-gap: 2vw;
+    grid-column-gap: 1vw;
     grid-row-gap: 1vw;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 1vh;
@@ -205,18 +234,38 @@ footer {
     flex-direction: row;
     gap: 20px;
 }
+.footerLinks h3{
+    color: rgb(78, 78, 78);
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
 
 .footerLinks ul li {
     list-style: none;
+    margin-bottom: 20px;
 }
 
 .footerLinks ul li a {
     text-decoration: none;
-    color: black;
+    /* font-weight: bold; */
+    color: grey;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    &:hover{
+        color: rgb(87, 87, 87);
+        text-decoration: underline;
+    }
 }
 .endFooter{
     text-align: left;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
+    color: grey;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 60px;
 }
 
 /* logo footer */
