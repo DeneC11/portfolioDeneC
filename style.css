@@ -1,7 +1,7 @@
-/* fuentes importadas */
+/* Fuentes importadas */
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* fuentes descargadas */
+/* Fuentes descargadas */
 @font-face {
     font-family: 'AmazDooMleft';
     src: url(./fonts/amazdoom/AmazDooMLeft.ttf);
@@ -12,66 +12,80 @@
     src: url(./fonts/amazdoom/AmazDooMRight.ttf);
 }
 
-@media (max-width: 768px) {
-  .project-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .project-card img {
-    width: 100%;
-    max-width: 100%;
-  }
-  nav ul {
-    flex-direction: column;   /* apila los enlaces */
-    align-items: center;
-    gap: 0.5rem;
-  }
+/* =========================
+   VARIABLES DE COLOR
+   ========================= */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --header-bg: #657362;
+  --header-text: #fff;
+  --card-bg: #fff;
+  --card-shadow: rgba(0,0,0,0.1);
+  --btn-bg: #7a7a7a;
+  --btn-bg-hover: #657362;
+  --btn-bg-hoveralter: #1e2a1d;
+  --link-color: #0077cc;
+  --footer-bg: #222;
+  --footer-text: #fff;
 }
 
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: #1e2a1d;
+  --header-text: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(255,255,255,0.05);
+  --btn-bg: #444;
+  --btn-bg-hover: #1e2a1d;
+  --btn-bg-hoveralter: #657362;
+  --link-color: #4dabf7;
+  --footer-bg: #111;
+  --footer-text: #aaa;
+}
+
+/* =========================
+   ESTILOS GENERALES
+   ========================= */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   line-height: 1.6;
-  background: #f9f9f9;
-  color: #333;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 header {
-  background: #657362;
-  color: #fff;
+  background: var(--header-bg);
+  color: var(--header-text);
   padding: 1rem 2rem;
   text-align: center;
 }
-.menu{
-    font-size: 1.5em;
-    font-weight: bolder;
+
+.menu {
+  font-size: 1.5em;
+  font-weight: bolder;
 }
 
-/* ajustes letras logo */
-#logo{
-    font-family: 'AmazDooMleft';
-    font-size: 11rem;
-    color: white;
-    letter-spacing: 8px;
-    /* text-decoration: none; */
-    /* transform: translateY(15%); */
+/* Ajustes letras logo */
+#logo {
+  font-family: 'AmazDooMleft';
+  font-size: 11rem;
+  color: white;
+  letter-spacing: 8px;
 }
-.mayus {
-    text-transform: uppercase;
-}
+.mayus { text-transform: uppercase; }
+.minus { text-transform: lowercase; }
+.right { font-family: 'AmazDooMright'; }
+.left { font-family: 'AmazDooMleft'; }
 
-.minus {
-    text-transform: lowercase;
-}
-
-.right {
-    font-family: 'AmazDooMright';
-}
-
-.left {
-    font-family: 'AmazDooMleft';
-}
+/* nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+} */
 
 nav ul {
   list-style: none;
@@ -82,8 +96,12 @@ nav ul {
 }
 
 nav a {
-  color: #fff;
+  color: var(--header-text);
   text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 
 .hero {
@@ -98,35 +116,37 @@ section {
 
 h2 {
   margin-bottom: 1rem;
-  color: #1b1b1b;
+  color: var(--text-color);
 }
 
+/* =========================
+   PROYECTOS
+   ========================= */
 .project-card {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* espacio entre imagen y texto */
-  background: #fff;
+  gap: 1.5rem;
+  background: var(--card-bg);
   padding: 1rem;
   margin-bottom: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px var(--card-shadow);
 }
 
 .project-card img {
-  width: 40%;          /* la imagen ocupa el 40% del ancho */
-  max-width: 300px;    /* límite de tamaño */
+  width: 40%;
+  max-width: 300px;
   border-radius: 6px;
-  object-fit: cover;   /* recorta sin deformar */
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-.project-info {
-  flex: 1; /* el texto ocupa el resto del espacio */
-}
+.project-info { flex: 1; }
 
 .project-card a {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #0077cc;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -134,32 +154,74 @@ h2 {
   text-decoration: underline;
 }
 
+/* =========================
+   BOTONES
+   ========================= */
 .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: #7a7a7a;
+  background: var(--btn-bg);
   color: #fff;
   border-radius: 5px;
   text-decoration: none;
 }
 
 .btn:hover {
-  background: #657362;
+  background: var(--btn-bg-hover);
 }
 
+/* boton oculto */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* =========================
+   BOTON TOGGLE DARCK
+   ========================= */
+
+.mode-toggle {
+  background: var(--btn-bgalter);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.mode-toggle:hover {
+    background: var(--btn-bg-hoveralter);
+    transform: scale(1.1);
+    /* box-shadow: 0 2px 6px rgba(255, 255, 255, 0.25); */
+}
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #222;
-  color: #fff;
+  background: var(--footer-bg);
+  color: var(--footer-text);
 }
 
+/* =========================
+   BOTÓN VOLVER ARRIBA
+   ========================= */
 #backToTop {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: none; /* oculto por defecto */
-  background-color: #7a7a7a;
+  display: none;
+  background-color: var(--btn-bg);
   color: white;
   border: none;
   border-radius: 50%;
@@ -173,5 +235,27 @@ footer {
 }
 
 #backToTop:hover {
-  background-color: #657362;
+  background-color: var(--btn-bg-hover);
 }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-card img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
