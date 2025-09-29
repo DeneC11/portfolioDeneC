@@ -1,0 +1,112 @@
+/* fuentes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* fuentes descargadas */
+@font-face {
+    font-family: 'AmazDooMleft';
+    src: url(./fonts/amazdoom/AmazDooMLeft.ttf);
+}
+
+@font-face {
+    font-family: 'AmazDooMright';
+    src: url(./fonts/amazdoom/AmazDooMRight.ttf);
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: #657362;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+.menu{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+/* ajustes letras logo */
+#logo{
+    font-family: 'AmazDooMleft';
+    font-size: 10rem;
+    color: white;
+    letter-spacing: 8px;
+    /* text-decoration: none; */
+    /* transform: translateY(15%); */
+}
+.mayus {
+    text-transform: uppercase;
+}
+
+.minus {
+    text-transform: lowercase;
+}
+
+.right {
+    font-family: 'AmazDooMright';
+}
+
+.left {
+    font-family: 'AmazDooMleft';
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 2rem;
+}
+
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #1b1b1b;
+}
+
+.project-card {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #7a7a7a;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #005fa3;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+}
