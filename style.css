@@ -22,6 +22,11 @@
     width: 100%;
     max-width: 100%;
   }
+  nav ul {
+    flex-direction: column;   /* apila los enlaces */
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
 
 body {
@@ -46,7 +51,7 @@ header {
 /* ajustes letras logo */
 #logo{
     font-family: 'AmazDooMleft';
-    font-size: 10rem;
+    font-size: 11rem;
     color: white;
     letter-spacing: 8px;
     /* text-decoration: none; */
@@ -139,7 +144,7 @@ h2 {
 }
 
 .btn:hover {
-  background: #005fa3;
+  background: #657362;
 }
 
 footer {
@@ -147,4 +152,26 @@ footer {
   padding: 1rem;
   background: #222;
   color: #fff;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* oculto por defecto */
+  background-color: #7a7a7a;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+#backToTop:hover {
+  background-color: #657362;
 }
