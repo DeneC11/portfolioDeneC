@@ -11,6 +11,19 @@
     font-family: 'AmazDooMright';
     src: url(./fonts/amazdoom/AmazDooMRight.ttf);
 }
+
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-card img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -84,11 +97,36 @@ h2 {
 }
 
 .project-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* espacio entre imagen y texto */
   background: #fff;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+  width: 40%;          /* la imagen ocupa el 40% del ancho */
+  max-width: 300px;    /* límite de tamaño */
+  border-radius: 6px;
+  object-fit: cover;   /* recorta sin deformar */
+}
+
+.project-info {
+  flex: 1; /* el texto ocupa el resto del espacio */
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
 }
 
 .btn {
