@@ -3,13 +3,13 @@
 
 /* Fuentes descargadas */
 @font-face {
-    font-family: 'AmazDooMleft';
-    src: url(./fonts/amazdoom/AmazDooMLeft.ttf);
+  font-family: 'AmazDooMleft';
+  src: url(./fonts/amazdoom/AmazDooMLeft.ttf);
 }
 
 @font-face {
-    font-family: 'AmazDooMright';
-    src: url(./fonts/amazdoom/AmazDooMRight.ttf);
+  font-family: 'AmazDooMright';
+  src: url(./fonts/amazdoom/AmazDooMRight.ttf);
 }
 
 /* =========================
@@ -21,7 +21,7 @@
   --header-bg: #657362;
   --header-text: #fff;
   --card-bg: #fff;
-  --card-shadow: rgba(0,0,0,0.1);
+  --card-shadow: rgba(0, 0, 0, 0.1);
   --btn-bg: #7a7a7a;
   --btn-bg-hover: #657362;
   --btn-bg-hoveralter: #1e2a1d;
@@ -36,7 +36,7 @@ body.dark-mode {
   --header-bg: #1e2a1d;
   --header-text: #e0e0e0;
   --card-bg: #1e1e1e;
-  --card-shadow: rgba(255,255,255,0.05);
+  --card-shadow: rgba(255, 255, 255, 0.05);
   --btn-bg: #444;
   --btn-bg-hover: #1e2a1d;
   --btn-bg-hoveralter: #657362;
@@ -70,6 +70,11 @@ header {
 .menu {
   font-size: 1.5em;
   font-weight: bolder;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 /* Ajustes letras logo */
@@ -78,18 +83,36 @@ header {
   font-size: 11rem;
   color: white;
   letter-spacing: 8px;
+  margin: 8rem auto 4rem;
+  text-align: center;
+  width: fit-content;
+  z-index: 1;
 }
-.mayus { text-transform: uppercase; }
-.minus { text-transform: lowercase; }
-.right { font-family: 'AmazDooMright'; }
-.left { font-family: 'AmazDooMleft'; }
 
-/* nav {
+.mayus {
+  text-transform: uppercase;
+}
+
+.minus {
+  text-transform: lowercase;
+}
+
+.right {
+  font-family: 'AmazDooMright';
+}
+
+.left {
+  font-family: 'AmazDooMleft';
+}
+
+nav {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-} */
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
 
 nav ul {
   list-style: none;
@@ -103,7 +126,8 @@ nav a {
   color: var(--header-text);
   text-decoration: none;
   transition: all 0.3s ease;
-  &:hover{
+
+  &:hover {
     text-decoration: underline;
   }
 }
@@ -142,10 +166,12 @@ h2 {
   max-width: 300px;
   border-radius: 6px;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.project-info { flex: 1; }
+.project-info {
+  flex: 1;
+}
 
 .project-card a {
   display: inline-block;
@@ -176,8 +202,15 @@ h2 {
 
 /* boton oculto */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* =========================
@@ -196,15 +229,19 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  /* margin-left: 1rem; */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  z-index: 10;
 }
 
 .mode-toggle:hover {
-    background: var(--btn-bg-hoveralter);
-    transform: scale(1.1);
-    /* box-shadow: 0 2px 6px rgba(255, 255, 255, 0.25); */
+  background: var(--btn-bg-hoveralter);
+  transform: scale(1.1);
+  /* box-shadow: 0 2px 6px rgba(255, 255, 255, 0.25); */
 }
 
 /* =========================
@@ -233,7 +270,7 @@ footer {
   height: 45px;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   transition: background 0.3s ease;
   z-index: 1000;
 }
@@ -246,6 +283,21 @@ footer {
    RESPONSIVE
    ========================= */
 @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #logo {
+    font-size: 11rem;
+    padding-top: 2rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .project-card {
     flex-direction: column;
     text-align: center;
@@ -262,4 +314,3 @@ footer {
     gap: 0.5rem;
   }
 }
-
