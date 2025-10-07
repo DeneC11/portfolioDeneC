@@ -296,6 +296,7 @@ footer {
   #logo {
     font-size: 9rem;
     padding-top: 2rem;
+    margin: auto;
   }
 
   .menu {
